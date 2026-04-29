@@ -65,30 +65,3 @@ maximum_filtered_image = max_filter(img_gray)
 minimum_filtered_image = min_filter(img_gray)
 median_filtered_image = median_filter(img_gray)
 mode_filtered_image = mode_filter(img_gray)
-
-# ==========================================
-# TEST BLOCK: (يمكنك حذفه بالكامل بعد التأكد من النتائج)
-# ==========================================
-if __name__ == "__main__":
-    # التأكد من أن الصورة تم تحميلها بنجاح قبل العرض
-    if img_color is not None:
-        # 1. عرض نتائج العمليات النقطية (Point Operations)
-        cv2.imshow('1- Original Color', img_color)
-        cv2.imshow('2- Added (Brightness +50)', added_image)
-        cv2.imshow('3- Complement (Negative)', complement_image)
-        cv2.imshow('4- Subtracted', subtracted_image)
-
-        # 2. عرض نتائج عمليات الجوار (Neighborhood Processing)
-        # ملحوظة: هذه النتائج مخزنة من معالجة الصورة الرمادية (img_gray)
-        cv2.imshow('5- Average Filter (Blur)', average_filtered_image)
-        cv2.imshow('6- Laplacian (Edges)', laplacian_filtered_image)
-        cv2.imshow('7- Median Filter (No Noise)', median_filtered_image)
-        
-        # عرض نتيجة الـ Mode Filter (قد تظهر ببطء بسبب طبيعة عملها الحسابية)
-        cv2.imshow('8- Mode Filter Result', mode_filtered_image)
-
-        
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-    else:
-        print("خطأ: لم يتم العثور على الصورة 'image.jpg'. تأكد من وجودها بجانب الكود.")
